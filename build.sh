@@ -1,10 +1,10 @@
 mkdir data
 mkdir data/lang
 
-wget https://github.com/isage/tsc-converter/releases/download/v1.0/tsc.tar.gz
+wget https://github.com/nxengine/tsc-converter/releases/download/v1.0/tsc.tar.gz
 tar -zxf tsc.tar.gz
 
-wget https://github.com/isage/nx-fontgen/releases/download/v1.1/fontbm.tar.gz
+wget https://github.com/nxengine/nx-fontgen/releases/download/v1.1/fontbm.tar.gz
 tar -zxf fontbm.tar.gz
 
 
