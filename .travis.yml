@@ -1,0 +1,12 @@
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      dist: trusty
+
+script:
+  - ./build.sh
+
+install:
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then source ./travis/linux.install.sh; fi
+
