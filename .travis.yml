@@ -10,3 +10,15 @@ script:
 install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then source ./travis/linux.install.sh; fi
 
+deploy:
+  provider: releases
+  api_key:
+    secure: "xYZ1fErZ2TQkw9r3YoCcaBQs02r5YQJs4Dd0vEHcnlTISYQHVsBTQVItA/womnMMeLboEpfCmm4Xjvclgciolyuj60nAbHHQyn2J2aDOjXNOlDBovqRRR9te99Dow0y9g4sKibREqqPfedaUk+5hIj5+wECG+NrqcwRiO1pxbaVP+2QsKLYt9+gtGQozfmLqwTcoQww5/a6a5C4xIhIdofvZvS9DGdcPVZdDBSCZj3MT0K5JIBPDL4yVZM1nOFoXe5DWE4nz3sTrskqrD91ArKVR6N/p15LdgLNMlaAWrfhVOaIEsFCUP3vpfcJ14ahf+UiUCeZ5clGrYprGQe/jsYiLF3m6EIO2635HLhCrFzCEtw9dpzRDx81ovU2se7T0g5uQJTrLPlHyfJIBjX3cOV3hzk7ze27fcNxGTBqcSoVC714B//szF8WikP8ISs3exax8FkfRID4xyjJaV7U8NvSpVHD3v29sQdv4MCYtZf/S0Bl4XfLQ3nKxfyciOw6I2tqzdfTk2kEaqEfBgexagU7/uSypPJA2MULMxSCxDNJeEXnmTRhi9WiMuvgbKs8tnjQo0Xaa+235JeXMujqRPeptg7hZtg9+PE7NAP2toU5rkjgR3lYVWAt0Pr5V8jud6MRMLrBRAHJK6OhjmzwCOrx7qNowhqLMVjF9qEW2AVc="
+  file_glob: true
+  file: *.zip
+  skip_cleanup: true
+  overwrite: true
+  draft: true
+  on:
+    tags: true
+    condition: "$TRAVIS_OS_NAME = linux"
