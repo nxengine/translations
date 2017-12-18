@@ -1,17 +1,13 @@
+language: bash
+
 matrix:
   include:
     - os: linux
       sudo: required
       dist: trusty
-      env:
-         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
-         - INSTALLGCC=1
 
 script:
   - ./build.sh
-
-before_install:
-  - eval "${MATRIX_EVAL}"
 
 install:
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then source ./travis/linux.install.sh; fi
