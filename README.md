@@ -6,7 +6,7 @@ See releases.
 
 ## For translators:
 
-All scripts should be decoded and stored in UTF-8.  
+All scripts should be decoded and stored in UTF-8 with CRLF as newline.  
 Additionally, there should be:  
 system.json - menu, stages, etc. translations. There's empty one provided in base/  
 metadata - this is for font generation, see below.  
