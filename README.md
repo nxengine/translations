@@ -21,3 +21,8 @@ and `<font>` is a relative path from [nx-fontgen](https://github.com/nxengine/nx
 New fonts, if required, should be submitted to [nx-fontgen](https://github.com/nxengine/nx-fontgen), and be free for required usage.  
 (e.g. you can't use/submit MS fonts)
 
+## testing your translation
+
+* put your `lang_<langname>` into `local` folder
+* run `build-local.sh` (linux) or `build-local.ps1` (windows)
+* copy contents of `local/data/` into your nx-evo data dir
