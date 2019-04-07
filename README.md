@@ -13,7 +13,7 @@ metadata - this is for font generation, see below.
 
 ## metadata file format
 
-`<font> <font-size-for-scale-1> <font-size-for-scale-2> <font-size-for-scale-3> <font-size-for-scale-4> <font-size-for-scale-5> <characters>`  
+`<font> <font-size-for-scale-1>:<texture-size> <font-size-for-scale-2>:<texture-size> <font-size-for-scale-3>:<texture-size> <font-size-for-scale-4>:<texture-size> <font-size-for-scale-5>:<texture-size> <characters>`  
 
 Where `<characters>` are comma-separated ranges of required chars. See example in base/ directory,  
 and `<font>` is a relative path from [nx-fontgen](https://github.com/nxengine/nx-fontgen) root.  
