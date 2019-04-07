@@ -38,7 +38,8 @@ do
     arr=(${str// / })
     for key in {1..5}
     do
-      ./fontbm -F ${arr[0]} --texture-width=1024 --texture-height=1024 -O data/lang/$lang/font_${key} -S ${arr[$key]} --chars ${arr[6]}
+      sizearr=(${arr[$key]//:/ })
+      ./fontbm -F ${arr[0]} --texture-width=${sizearr[1]} --texture-height=${sizearr[1]} -O data/lang/$lang/font_${key} -S ${sizearr[0]} --chars ${arr[6]}
     done
 
     zip -r $lang.zip data/lang/$lang/
