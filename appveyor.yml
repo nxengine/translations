@@ -1,0 +1,42 @@
+image:
+  - Ubuntu2004
+
+version: 1.14.{build}
+
+pull_requests:
+  do_not_increment_build_number: true
+
+artifacts:
+  - path: all.zip
+    name: build
+
+
+deploy:
+  - provider: GitHub
+    release: $(APPVEYOR_REPO_TAG_NAME)
+    tag: $(APPVEYOR_REPO_TAG_NAME)
+    description: ''
+    auth_token:
+      secure: UNAaCG+KMRMqZqVEHpSgXTXZOJlqEQ/7nySQ6U/LutHjXnuqVNpYDxoqIW1hufI+
+    draft: true
+    force_update: true
+    prerelease: false
+    on:
+      APPVEYOR_REPO_TAG: true
+
+
+for:
+-
+  matrix:
+    only:
+      - image: Ubuntu2004
+
+  install:
+    - sudo apt update
+    - sudo apt install -yqq libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libjpeg-dev libpng-dev
+
+  build_script:
+    - ./build.sh
+
+  after_build:
+    - appveyor PushArtifact "all.zip" -DeploymentName build
