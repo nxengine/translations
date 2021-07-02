@@ -17,6 +17,7 @@ git clone https://github.com/nxengine/lang_italian
 git clone https://github.com/nxengine/lang_chinese
 git clone https://github.com/nxengine/lang_spanish
 git clone https://github.com/nxengine/lang_arabic
+git clone https://github.com/nxengine/lang_korean
 
 
 for i in lang*
