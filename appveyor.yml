@@ -1,9 +1,9 @@
-image:
-  - Ubuntu2004
+image: Ubuntu2004
 
 version: 1.14.{build}
 
-build: off
+platform:
+  - x64
 
 pull_requests:
   do_not_increment_build_number: true
@@ -26,18 +26,12 @@ deploy:
       APPVEYOR_REPO_TAG: true
 
 
-for:
--
-  matrix:
-    only:
-      - image: Ubuntu2004
+install:
+  - sudo apt update
+  - sudo apt install -yqq libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libjpeg-dev libpng-dev
 
-  install:
-    - sudo apt update
-    - sudo apt install -yqq libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libjpeg-dev libpng-dev
+build_script:
+  - ./build.sh
 
-  build_script:
-    - ./build.sh
-
-  after_build:
-    - appveyor PushArtifact "all.zip" -DeploymentName build
+after_build:
+  - appveyor PushArtifact "all.zip" -DeploymentName build
